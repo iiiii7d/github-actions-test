@@ -4,7 +4,7 @@ jobs:
   blah:
     runs-on: ubuntu-latest
     steps:
-      - run: jq
+      - run: cargo -v
     
   job_1:
     name: Add 3 and 7
