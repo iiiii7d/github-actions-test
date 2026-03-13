@@ -4,7 +4,7 @@ jobs:
   blah:
     runs-on: ubuntu-latest
     steps:
-      - run: rustup toolchain list
+      - run: cargo -V && rustc -V
     
   job_1:
     name: Add 3 and 7
