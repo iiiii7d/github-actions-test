@@ -4,30 +4,10 @@ jobs:
   blah:
     runs-on: ubuntu-latest
     steps:
-      - run: cargo -V && rustc -V
-    
-  job_1:
-    name: Add 3 and 7
-    runs-on: ubuntu-latest
-    steps:
-      - shell: bash
-        run: |
-          mkdir what
-          expr 3 + 7 > what/math-homework.txt
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v4
+      - run: touch lol.txt
+      - uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
         with:
-          name: homework_pre
-          path: what
-  job_2:
-    name: Multiply by 9
-    needs: job_1
-    runs-on: windows-latest
-    steps:
-      - name: Download math result for job 1
-        uses: actions/download-artifact@v4
-        with:
-          name: homework_pre
-      - shell: bash
-        run: |
-          ls -al
+          tag_name: ABC
+          body: a;sljkfhjasl;dfh ${{ github.ref_name }}
+          files: lol.txt
+          overwrite: true
