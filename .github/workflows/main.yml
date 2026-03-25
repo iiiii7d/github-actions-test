@@ -4,10 +4,7 @@ jobs:
   blah:
     runs-on: ubuntu-latest
     steps:
-      - run: touch lol.txt
       - uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
         with:
           tag_name: ABC
           body: a;sljkfhjasl;dfh ${{ github.ref_name }}
-          files: lol.txt
-          overwrite: true
